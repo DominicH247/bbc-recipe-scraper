@@ -8,6 +8,11 @@ authors = ["Dominic Hui"]
 python = "^3.8"
 requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
+aiohttp = "^3.7.4"
+pymongo = "^3.11.3"
+motor = "^2.3.1"
+mypy = "^0.812"
+tornado = "^6.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"

@@ -1,0 +1,38 @@
+version: '3.4'
+# set up mongodb as single node with replica set to make use of transactions
+services:
+  # catalog:
+  #   container_name: 'recipe-service'
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   environment: 
+  #     MongoDbSettings__Host: mongo
+  #     MongoDbSettings__User: mongoadmin 
+  #     # not ideal but okay for testing purposes
+  #     MongoDbSettings__Password: password
+  #   ports:
+  #     - 8081:80
+  #   depends_on:
+  #     - db
+
+  db:
+    image: mongo
+    container_name: 'mongo-recipe'
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: ${DATABASE_NAME}
+      MONGO_REPLICA_SET_NAME: ${MONGO_REPLICA_SET_NAME}
+    healthcheck:
+          test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo -u $${MONGO_INITDB_ROOT_USERNAME} -p $${MONGO_INITDB_ROOT_PASSWORD} --quiet) -eq 1
+          interval: 10s
+          start_period: 30s
+    ports:
+      - ${HOST_PORT}:27017
+    volumes:
+      - recipesmongodbdata:/data/db
+
+volumes:
+  recipesmongodbdata:
