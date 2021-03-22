@@ -20,9 +20,6 @@ class RecipeService(IRecipeService, IRecipesBatchFetch):
         self._recipe_repo = recipe_repo
         self._cuisine_repo = cuisine_repo
     
-    async def get_dish_recipe(self) -> Dict:
-        pass
-    
     async def get_paths_for_recipes_async(self, page_num: int, cuisine_name: str) -> List:
         async with ClientSession() as session:
             async with session.get(f"{Settings._BASE_URL}{Settings._SEARCH_PATH}?cuisines={cuisine_name}&page={page_num}") as response:

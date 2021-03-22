@@ -3,10 +3,6 @@ from typing import Dict, List
 
 class IRecipeService(ABC):
     @abstractmethod
-    async def get_dish_recipe(self) -> Dict:
-        NotImplementedError
-    
-    @abstractmethod
     async def get_paths_for_recipes(self, page_number: int, cuisine_name: str) -> List:
         NotImplementedError
     
