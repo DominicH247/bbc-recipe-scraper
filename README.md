@@ -33,8 +33,8 @@ export DATABASE_NAME=recipes_db
 
 ## Caveats
 Project is very much WIP and was created as an excercise for learning Python.
-There are ~5000 recipes available, it currently takes a while (30-40 mins) to gather and store all the recipes. 
-I have to to experiment with async calls to try and speed this up but end up hitting request limits. Thus have settled on using synchronous requests for now.
+There are over 10,000 recipes available, it currently takes a while (45 - 60 mins) to gather and store them all. 
+I have experimented with async calls to try and speed this up but end up hitting request limits. Thus have settled on using synchronous requests for now.
 
 Feel free to leave any comments or suggestions on where to improve. I would appreciate the feedback!
 
