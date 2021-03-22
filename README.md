@@ -1,5 +1,5 @@
 # BBC Food Recipe Scraper
-A Practice project for Learning Python. It scrapes all the recipes from BBC Food and stores them in MongoDB.
+A practice project for learning Python. It scrapes all the recipes from BBC Food and stores them in MongoDB.
 
 Uses Beautuful Soup to collect the available cuisines. For each cuisine it gathers all available recipe URLs and from the recipe URLs we can then obtain the recipe details i.e
 ingredients, methods, prep time etc
@@ -40,5 +40,6 @@ Feel free to leave any comments or suggestions on where to improve. I would appr
 
 ## TODO
 - add tests
-- fix some of the module names 
+- fix some of the inconsistent module names
+- fix the type hinting
 - tidy up the code
