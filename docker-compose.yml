@@ -1,21 +1,6 @@
 version: '3.4'
-# set up mongodb as single node with replica set to make use of transactions
-services:
-  # catalog:
-  #   container_name: 'recipe-service'
-  #   build:
-  #     context: .
-  #     dockerfile: ./Dockerfile
-  #   environment: 
-  #     MongoDbSettings__Host: mongo
-  #     MongoDbSettings__User: mongoadmin 
-  #     # not ideal but okay for testing purposes
-  #     MongoDbSettings__Password: password
-  #   ports:
-  #     - 8081:80
-  #   depends_on:
-  #     - db
 
+services:
   db:
     image: mongo
     container_name: 'mongo-recipe'
