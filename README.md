@@ -23,7 +23,7 @@ MONGO_PASSWORD
 HOST_PORT
 DATABASE_NAME
 ```
-I typically use Direnv and add the environment variables to .envrc file at the project root like so:
+I typically use Direnv and add the environment variables to .envrc file at the project root. e.g.
 ```
 export MONGO_USER=mongoadmin
 export MONGO_PASSWORD=supersecure
